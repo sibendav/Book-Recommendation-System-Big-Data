@@ -1,0 +1,43 @@
+Structures for MySQL Shell 8.0.25
+
+ MySQL  JS > \sql
+ 
+ MySQL  SQL > \c
+\connect [--mx|--mysqlx|--mc|--mysql] <URI>
+
+ MySQL  SQL > \c --mysql root@localhost:3306
+Creating a Classic session to 'root@localhost:3306'
+Please provide the password for 'root@localhost:3306': *************** -- <- here we put the password
+
+Save password for 'root@localhost:3306'? [Y]es/[N]o/Ne[v]er (default No): no
+
+Fetching schema names for autocompletion... Press ^C to stop.
+Your MySQL connection id is 13
+Server version: 8.0.25 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+
+ MySQL  localhost:3306 ssl  SQL > use nextbook4u;
+Default schema set to nextbook4u.
+Fetching table and column names from nextbook4u for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  nextbook4u  SQL > show tables;
++----------------------+
+| Tables_in_nextbook4u |
++----------------------+
+| bx-book-ratings      |
+| bx-books             |
+| bx-users             |
++----------------------+
+3 rows in set (0.0015 sec)
+
+ MySQL  localhost:3306 ssl  nextbook4u  SQL > alter user root@localhost identified with caching_sha2_password by 'mysqlefratush37';
+Query OK, 0 rows affected (0.0166 sec)
+
+ MySQL  localhost:3306 ssl  nextbook4u  SQL > flush privileges;
+Query OK, 0 rows affected (0.0106 sec)
+
+ MySQL  localhost:3306 ssl  nextbook4u  SQL >  alter user root@localhost identified with mysql_native_password by 'mysqlefratush37';
+Query OK, 0 rows affected (0.0039 sec)
+
+ MySQL  localhost:3306 ssl  nextbook4u  SQL > flush privileges;
+Query OK, 0 rows affected (0.0121 sec)
+  
